@@ -1,0 +1,79 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    padding: 20px;
+    color: whitesmoke;
+    background-image: url("../img/battleship.png");
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    background-color: #ae659d;
+    background-position-y: 150px;
+    background-position-x: 25px;
+}
+
+.filmsTable{
+    border-collapse: collapse;
+    width: 80vw;
+    margin:0 auto;
+    table-layout: fixed;
+    text-align: center;
+}
+
+.filmsTable td, .filmsTable th {
+    border: 3px solid #442f14;
+    padding: 10px;
+}
+
+.tableRow {
+    width: 80vw;
+    height: 100px;
+}
+
+.tableHead th {
+    background-color: #efb087;
+}
+
+.th-1 {
+    width: 100px;
+}
+
+.th-2 {
+    width: 150px;
+}
+
+.th-1, .th-2, .th-3, .th-4 {
+    color:#442f14;
+}
+
+.characters {
+    height: 100%;
+    white-space: pre-wrap;
+}
+
+/* Animation styles*/
+
+.loading {
+    display: block;
+    margin: 20px auto 0 auto;
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(255,255,255,.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+    -webkit-animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { -webkit-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    to { -webkit-transform: rotate(360deg); }
+}

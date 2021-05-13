@@ -1,0 +1,41 @@
+.Navbar {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  background: #eccccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  nav ul {
+    display: flex;
+    margin: 0;
+    list-style: none;
+    padding: 3px;
+    align-items: center;
+    justify-content: center;
+
+    li {
+      margin-right: 40px;
+      text-align: center;
+      padding: 20px 0;
+
+      a {
+        color: #000000;
+        font-size: 22px;
+        font-weight: bold;
+        text-decoration: none;
+        cursor: pointer;
+
+        &.active,
+        &:hover {
+          color: #6700ba;
+        }
+      }
+    }
+
+    li:last-child {
+      margin-right: 0;
+    }
+  }
+}

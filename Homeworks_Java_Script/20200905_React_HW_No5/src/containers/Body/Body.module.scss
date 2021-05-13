@@ -1,0 +1,17 @@
+.Body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.productsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 1400px;
+  flex-wrap: wrap;
+  padding: 30px;
+}

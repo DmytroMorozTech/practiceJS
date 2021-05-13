@@ -1,0 +1,57 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    margin: 40px;
+    font-family: Verdana;
+}
+
+.price {
+    outline-style: none;
+    /*Задает стиль внешней границы элемента. В отличие от линии, задаваемой через border, линия через outline
+     отображается вокруг элемента, не влияя на ширину блока или его положение.*/
+    width: 150px;
+    margin-top: 20px;
+    font-family: Verdana;
+    font-size: 16px;
+}
+
+.onFocus {
+    border: 3px solid green;
+    width: 150px;
+}
+
+.error {
+    border: 3px solid red;
+}
+
+#error-message {
+    color: orangered;
+    font-weight: bold;
+}
+
+.success {
+    color: green;
+    font-weight: bold;
+}
+
+span {
+    background: lightsalmon;
+    border: 2px solid orangered;
+    border-radius: 10px;
+    color: black;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+#cancelButton {
+    width: 25px;
+    height: 25px;
+    background-color: lightsalmon;
+    border-radius: 50%;
+    border-color: black;
+    margin-left: 15px;
+    font-family: Verdana;
+}

@@ -1,0 +1,16 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px; /* 1rem */
+    margin: 40px;
+}
+
+p {
+    width: 50vw;
+    font-size: 40px;
+    font-family: Calibri, Verdana, sans-serif;
+    color: darkmagenta;
+    background: lightgray;
+}

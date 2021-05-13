@@ -1,0 +1,68 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    padding: 40px;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.get-address-btn, .get-any-ip-btn {
+    display: flex;
+    width: 150px;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border: 0;
+    outline: 0;
+    padding: 15px 20px;
+    font-size: 1rem;
+    font-family: monospace;
+    box-shadow: 0 5px 7px #e12ea9;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    cursor: pointer;
+    border-radius: 5px;
+    border-bottom: 4px solid #d9d9d9;
+    margin: 50px 0 20px 0;
+    font-weight: bold;
+    color: #550b3e;
+}
+
+.get-address-btn:hover, .get-any-ip-btn:hover {
+    box-shadow: 0 15px 25px -5px #e12ea9;
+    -webkit-transform: scale(1.03);
+    transform: scale(1.03);
+}
+
+.get-address-btn:active, get-any-ip-btn:active {
+    box-shadow: 0 4px 8px #c8068f;
+    -webkit-transform: scale(0.98);
+    transform: scale(0.98);
+}
+
+.result, .result-any-ip {
+    letter-spacing: 2px;
+    margin-top: 40px;
+    color: #550b3e;
+    font-weight: bold;
+    line-height: 30px;
+}
+
+.ip-input {
+    font-family: inherit;
+    font-size: inherit;
+    width: 400px;
+    border: 2px solid darkgray;
+    margin-top: 20px;
+}
+
+.h1 {
+    margin-top: 100px;
+}
+
+
+
+
+

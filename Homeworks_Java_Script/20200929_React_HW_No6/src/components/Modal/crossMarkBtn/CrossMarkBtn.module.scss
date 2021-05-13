@@ -1,0 +1,10 @@
+.CrossMarkBtn {
+  width:20px;
+  height: 20px;
+  cursor: pointer;
+  transition: all 0.1s linear;
+
+  &:hover {
+    transform: scale(1.15);
+  }
+}

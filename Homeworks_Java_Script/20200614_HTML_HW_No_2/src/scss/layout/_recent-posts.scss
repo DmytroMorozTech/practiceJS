@@ -1,0 +1,58 @@
+.recent-posts {
+  max-width: 100%;
+  margin-bottom: 40px;
+  @media (min-width: 768px) {
+    margin-bottom: 28px;
+  }
+
+
+
+  &__container{
+    display: flex;
+    flex-wrap: wrap;
+    @media (min-width: 1200px) {
+      max-height: 400px;
+      flex-wrap: wrap;
+      @include flex-column;
+    }
+  }
+
+  &__article {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 28px;
+    @media (min-width: 480px) {
+      flex-direction: row;
+      margin-bottom: 32px;
+    }
+    @media (min-width: 768px) {
+      flex-direction: row;
+      margin-bottom: 32px;
+    }
+
+    & img {
+      width: 160px;
+      height: 140px;
+      margin-right: 20px;
+      margin-bottom: 11px;
+    }
+
+    &:last-child {
+      display: none;
+      @media (min-width: 768px) {
+        display: flex;
+        // initially the fourth article is hidden. Here we make it visible again starting from resolution 768px.
+      }
+    }
+
+    @media (min-width: 1200px) {
+      width: 50%;
+    }
+  }
+
+  &__content {
+    //  container for all text blocks that are included into 1 article.
+    max-width: 404px;
+  }
+}

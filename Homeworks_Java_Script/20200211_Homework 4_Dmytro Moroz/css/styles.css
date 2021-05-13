@@ -1,0 +1,392 @@
+/*
+1. Header
+2. Sprites
+3. Main content
+4. Checkbox
+*/
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 14px; /* 1rem */
+}
+
+body {
+    font-family: Verdana, Helvetica, sans-serif;
+}
+
+/*1. Header */
+.background {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../img/background.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.main-header {
+    position: relative;
+    height: 54px;
+    background-color: rgba(0,0,0,0.5);
+    padding-top: 16px;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100vw;
+    padding-left: 5.92%;
+    padding-right: 5.49%;
+}
+
+.journey {
+    float: left;
+    font-size: 20pt;
+    color:white;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: color .7s;
+}
+
+.journey:hover {
+    color: #3cb878;
+}
+
+.header-up-right p::before {
+    content:"|";
+    color: rgba(255,255,255,0.3);
+    padding: 0 25px;
+    float: left;
+}
+
+.header-up-right {
+    float:right;
+    margin-top: 3px;
+}
+
+.header-up-right p {
+    font-size: 1rem;
+    color: white;
+}
+
+.header-up-right a:link,
+.header-up-right a:visited,
+.text a:link,
+.text a:visited {
+    color: #3cb878;
+    text-decoration: none;
+}
+
+.header-up-right a:hover,
+.text a:hover {
+    text-decoration: underline;
+}
+
+.icons-up-right {
+    float:right;
+    margin:0;
+}
+
+.clearfix {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* 2. Sprites*/
+.sprite {
+    background-image: url("../img/spritesheet.png");
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+.sprite-ic_caledar {
+    width: 19px;
+    height: 19px;
+    background-position: -5px -5px;
+}
+
+.sprite-ic_caledar_hover {
+    width: 19px;
+    height: 19px;
+    background-position: -34px -5px;
+}
+
+.sprite-ic_forum {
+    width: 28px;
+    height: 20px;
+    background-position: -63px -5px;
+    margin: 0 27px;
+}
+
+.sprite-ic_forum_hover {
+    width: 28px;
+    height: 20px;
+    background-position: -101px -5px;
+    margin: 0 27px;
+}
+
+.sprite-ic_journey {
+    width: 20px;
+    height: 20px;
+    background-position: -139px -5px;
+}
+
+.sprite-ic_journey_hover {
+    width: 20px;
+    height: 20px;
+    background-position: -169px -5px;
+}
+
+/* Specification of hover effect for sprites*/
+
+.sprite-ic_caledar:hover {
+    background-position: -34px -5px;
+}
+.sprite-ic_journey:hover {
+    background-position: -169px -5px;
+}
+
+.sprite-ic_forum:hover {
+    background-position: -101px -5px;
+}
+
+/* 3. Main content */
+.main-content {
+    height: calc(100vh - 54px); /*Считаем высоту блока main content*/
+    /*padding-top: calc((calc(100vh - 54px) - 585px)/2); -если возможно, лучше избегать операций с calc.*/
+    box-sizing: border-box;
+    position: relative;
+}
+
+.form {
+    box-sizing: border-box;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 585px;
+    width: 445px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 29px 60px 32px 62px;
+}
+
+.square {
+    position: absolute;
+    left:0;
+    top: 29px;
+    width: 18px;
+    height: 18px;
+    background-color: #3cb878;
+}
+
+.sign-up {
+    color: #434343;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 21px;
+    float: left;
+    padding-bottom: 15px;
+}
+
+.log-in {
+    color: #3cb878;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    float: right;
+    text-decoration: none;
+}
+
+.log-in:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    width: 157px;
+    height: 46px;
+    font-size: 16px;
+    color: white;
+    font-weight: 400;
+    line-height: 46px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-bottom: 33px;
+    transition: .5s;
+}
+
+.blue {
+    background-color: #305db8;
+    float: left;
+}
+
+.blue:hover {
+    background-color: #264b96;
+}
+
+.red {
+    background-color: #df4a32;
+    float: right;
+}
+
+.red:hover {
+    background-color: #c3412c;
+}
+
+.btn.blue span {
+    float: right;
+    padding-right: 17px;
+}
+
+.btn.blue span::after {
+    content:url("../img/rectangle.png");
+    font-size: 38px;
+    padding: 0 18px 0 17px;
+    float: left;
+}
+
+.btn.red span {
+    float: right;
+    padding-right: 30px;
+}
+
+.btn.red span::after {
+    content:url("../img/rectangle.png");
+    font-size: 38px;
+    padding: 0 24px 0 9px;
+    float: left;
+}
+
+.logo-facebook {
+    float: right;
+    width: 10px;
+    height: 46px;
+}
+
+.logo-google-plus {
+    float: right;
+    width: 25px;
+    height: 46px;
+}
+
+.or {
+    position: relative;
+    line-height: 14px;
+    height: 14px;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.or p::before {
+    content:url("../img/line.png");
+    position: absolute;
+    left:0;
+    top:-3px;
+}
+
+.or p::after {
+    content:url("../img/line.png");
+    position: absolute;
+    right:0;
+    top:-3px;
+}
+
+.input-form {
+    box-sizing: border-box;
+    font-family: inherit;
+    width: 322px;
+    height: 46px;
+    margin-bottom: 9px;
+    padding: 19px 0 17px 17px;
+    border: 1px solid rgba(234, 234, 234, 1);
+    border-radius: 4px;
+}
+
+.input-form:focus {
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.21);
+    border: 1px solid rgba(234, 234, 234, 1);
+    outline: none;
+}
+
+.first-name {
+    margin-bottom: 17px;
+}
+
+::placeholder {
+    color: #bebebe;
+}
+
+.create-account-btn {
+    display: block;
+    width: 322px;
+    height: 46px;
+    background-color: #3cb878;
+    margin: 25px 0 32px 0;
+    text-align: center;
+    font-size: 16px;
+    color: white;
+    font-weight: 400;
+    line-height: 46px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: .5s;
+}
+
+.create-account-btn:hover {
+    background-color: #329a65;
+}
+
+/*4. Checkbox*/
+.label {
+    display: inline-block;
+    line-height: 20px;
+}
+
+.checkbox {
+    display: none;
+}
+
+.visual-checkbox {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #eaeaea;
+    cursor: pointer;
+}
+
+.visual-checkbox::before {
+    content:url("../img/check-mark.svg");
+    position: absolute;
+    display: inline-block;
+    top: 4%;
+    left: 7%;
+    opacity: 0;
+    transition: .3s;
+}
+
+.checkbox:checked + .visual-checkbox::before {
+    opacity: 1;
+}
+
+.text {
+    position: relative;
+    display: block;
+    height: 20px;
+    line-height: 20px;
+    margin-top: 10px;
+}
+
+.terms {
+    position: absolute;
+    width: 100%;
+    top:0;
+    left: 10%;
+}

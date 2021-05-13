@@ -1,0 +1,90 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    padding: 40px;
+}
+
+.trello-container {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-start;
+    background-color: #757090;
+    width: 350px;
+    min-height: 150px;
+    border: 3px solid black;
+    border-radius: 5%;
+    margin: 10px
+}
+
+.container4Cards {
+    width: 90%;
+    min-height: 60px;
+}
+
+.addCardBtn, .sortBtn, .add-list-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 170px;
+    height: 40px;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 30px;
+    margin: 5px 0;
+    border-radius: 10%;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background: rgb(236,236,244);
+    background: radial-gradient(circle, rgba(236,236,244,1) 0%, rgba(250,250,255,1) 35%, rgba(164,159,162,1) 100%);
+}
+
+.sort-btn-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+}
+
+.icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+}
+
+.card {
+    width: 100%;
+    background-color: #d8b3a5;
+    font-size: 18px;
+    font-weight: bold;
+    color: #611e09;
+    padding: 14px;
+    margin: 3px 0;
+    height: 40px;
+    outline: none;
+    border-radius: 16%;
+    border: 2px solid #7d4d3e;
+}
+
+.background-color{
+    background: #681CA6;
+    color: white;
+    margin: 20px auto;
+}

@@ -1,0 +1,28 @@
+.Modal {
+  z-index: 10;
+  background-color: #db5f53;
+  width: 60vw;
+  color: #fff;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  &__heading {
+    background-color: #d22715;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    padding: 10px 15px;
+    font-size: 18px;
+    line-height: 30px;
+  }
+}

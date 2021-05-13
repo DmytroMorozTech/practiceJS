@@ -1,0 +1,59 @@
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: black;
+    height: 100vh;
+    perspective: 18000px;
+    overflow: hidden;
+}
+
+.starWarsText {
+    position: absolute;
+    left: 20vw;
+    width: 60vw;
+    height: 95%;
+    color: #fcd000;
+    font-size: 11vh;
+    line-height: 27vh;
+    z-index: 1;
+    transform: rotateX(70deg);
+}
+
+.fadingBlockTop {
+    height: 27vh;
+    width: 100%;
+    position: relative;
+    background: linear-gradient(to bottom, black, rgba(0,0,0,0));
+    z-index: 2;
+}
+
+.h1 , .h2 {
+    text-align: center;
+    animation-duration: 30s;
+    animation-name: star-wars;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    z-index: 1;
+}
+
+.paragraph {
+    animation-duration: 30s;
+    animation-name: star-wars;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    z-index: 1;
+}
+
+@keyframes star-wars {
+    0% {
+        transform: translateY(110vh);
+    }
+
+    100% {
+        transform: translateY(-800vh);
+    }
+}
