@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework No.5_Moroz Dmytro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
+    <link href="css/styles_v2.css" rel="stylesheet">
+    <link href="libs/font-awesome/css/all.css" rel="stylesheet"> <!--Подключаем иконки font-awesome к нашей странице-->
+</head>
+<body>
+        <div class="container">
+            <div class="background"></div>
+            <table class="table">
+                <colgroup>
+                    <col span="1" class="col1">
+                    <col span="6" class="coln">
+                </colgroup>
+<!--                    <col>
+                    <col style="background-color: #e3e3e3; width:157px">
+                    <col style="width:157px">
+                    <col style="background-color: #e3e3e3; width:157px">
+                    <col style="width:157px">
+                    <col style="background-color: #e3e3e3; width:157px">
+                    <col style="width:157px">-->
+<!--
+                    Использовать colgroup & col можно, но это слегка громоздкое решение.
+                    Лучше заменить эту конструкцию вот таким селектором в CSS:
+
+                        .table td:nth-child(even),
+                        .table th:nth-child(even) {
+                        background-color: #e3e3e3;}-->
+
+                <thead>
+                    <tr>
+                        <th class="header"><span class="header header-regular">CHOOSE YOUR</span><br>pricing plan</th>
+                        <th class="header"><i class="fas fa-archive"></i><br><span class="header header-bold">storage</span></th>
+                        <th class="header"><i class="fas fa-cloud-upload-alt"></i><br><span class="header header-bold">bandwidth</span></th>
+                        <th class="header"><i class="fas fa-envelope"></i><br><span class="header header-bold">email</span></th>
+                        <th class="header"><i class="fas fa-life-ring"></i><br><span class="header header-bold">support</span></th>
+                        <th class="header"><i class="fas fa-cube"></i><br><span class="header header-bold">products</span></th>
+                        <th class="header"><i class="fas fa-users"></i><br><span class="header header-bold">users</span></th>
+                    </tr>
+                </thead>
+                <tbody class="tbody">
+                    <tr>
+                        <td class="standard">standard
+                            <p class="price-per-month">
+                                <span class="price">&#36;17</span>
+                                <span class="price-block">
+                                    <span class="price-cents">.99</span>
+                                    <span class="per-month">per month</span>
+                                </span>
+                            </p>
+                            <a href="#" class="btn">buy now</a>
+                        </td>
+                        <td>500gb<br/>storage</td>
+                        <td>limited<br/>bandwidth</td>
+                        <td>25<br/>emails</td>
+                        <td>24/7<br/>support</td>
+                        <td>20<br/>products</td>
+                        <td>1<br/>user</td>
+                    </tr>
+                    <tr>
+                        <td class="ultimate">ultimate
+                            <p class="price-per-month">
+                                <span class="price">&#36;37</span>
+                                <span class="price-block">
+                                    <span class="price-cents">.99</span>
+                                    <span class="per-month">per month</span>
+                                </span>
+                            </p>
+                            <a href="#" class="btn">buy now</a>
+                        </td>
+                        <td>1000gb<br/>storage</td>
+                        <td>limited<br/>bandwidth</td>
+                        <td>45<br/>emails</td>
+                        <td>24/7<br/>support</td>
+                        <td>30<br/>products</td>
+                        <td>10<br/>user</td>
+                    </tr>
+                    <tr>
+                        <td class="premium">premium
+                            <p class="price-per-month">
+                                <span class="price">&#36;97</span>
+                                <span class="price-block">
+                                    <span class="price-cents">.99</span>
+                                    <span class="per-month">per month</span>
+                                </span>
+                            </p>
+                            <a href="#" class="btn">buy now</a>
+                        </td>
+                        <td>2000gb<br/>storage</td>
+                        <td>unlimited<br/>bandwidth</td>
+                        <td>65<br/>emails</td>
+                        <td>24/7<br/>support</td>
+                        <td>60<br/>products</td>
+                        <td>15<br/>user</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+</body>
+</html>

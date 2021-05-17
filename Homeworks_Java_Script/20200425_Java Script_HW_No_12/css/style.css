@@ -1,0 +1,101 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin: 60px 0 60px 0;
+    width: 100%;
+}
+
+.pictures {
+    height: 400px;
+}
+
+.pictures img {
+    width: 600px;
+    position: absolute;
+    top: 40px;
+    /*left: calc(100vw/2 - 443px/1.47); - это не оптимальный вариант центрирования*/
+    transform: translate(-50%);
+    visibility: hidden;
+    animation-duration: 10s;
+    /*animation-name: fade;*/
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+}
+
+#pauseSlideShow, #resumeSlideShow {
+    background-color: #cc850d;
+    width: 220px;
+    height: 65px;
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    line-height: 55px;
+    border-radius: 15px;
+
+    text-decoration: none;
+    transition: all ease-in-out .5s;
+    text-align: center;
+    margin: 0 30px;
+}
+
+#pauseSlideShow:active, #pauseSlideShow:focus {
+    outline: none;
+}
+
+#resumeSlideShow:active, #resumeSlideShow:focus {
+    outline: none;
+}
+
+#pauseSlideShow:hover, #resumeSlideShow:hover {
+    background-color: #bb5201;
+    cursor: pointer;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    5% {  /* to change for 5% and 95% correspondingly*/
+        opacity: 1;
+    }
+    95% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+#countDown {
+    margin-top: 50px;
+    display: block;
+    width: 400px;
+}
+
+.table {
+    display: table;
+    margin: 0 auto;
+    table-layout: fixed;
+    box-sizing: content-box;
+    background: #f2f2f2;
+    font-size: 60px;
+    border-collapse: collapse;
+}
+
+.table th, td {
+    width: 150px;
+    height: 60px;
+    text-align: center;
+    border: 2px solid gray;
+    /*vertical-align: middle;*/
+}

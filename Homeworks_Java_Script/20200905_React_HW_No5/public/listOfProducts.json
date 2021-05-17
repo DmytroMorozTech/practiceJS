@@ -1,0 +1,113 @@
+[
+  {
+    "name": "Cougar Revenger ST USB Black",
+    "price": 1099,
+    "imgUrl":"../images/mouse_id_301.jpg",
+    "id": 301,
+    "color": "#efbff3",
+    "addedToCart": false,
+    "addedToFavorites": false
+  },
+  {
+    "name": "Logitech G604 Wireless Gaming Mouse",
+    "price": 3099,
+    "imgUrl":"../images/mouse_id_302.jpg",
+    "id": 302,
+    "color": "#efbff3",
+    "addedToCart": false,
+    "addedToFavorites": false
+
+  },
+  {
+    "name": "HyperX Pulsefire Dart Wireless Gaming Black",
+    "price": 2499,
+    "imgUrl":"../images/mouse_id_303.jpg",
+    "id": 303,
+    "color": "#efbff3",
+    "addedToCart": false,
+    "addedToFavorites": false
+  },
+  {
+    "name": "Logitech G502 Lightspeed Wireless Gaming",
+    "price": 4417,
+    "imgUrl":"../images/mouse_id_304.jpg",
+    "id": 304,
+    "color": "#efbff3",
+    "addedToCart": false,
+    "addedToFavorites": false
+  },
+  {
+    "name": "ASUS ROG Strix Impact II USB Black",
+    "price": 1619,
+    "imgUrl":"../images/mouse_id_305.jpg",
+    "id": 305,
+    "color": "#efbff3",
+    "addedToCart": false,
+    "addedToFavorites": false
+  },
+  {
+    "name": "Glorious Model O RGB USB",
+    "price": 1699,
+    "imgUrl":"../images/mouse_id_306.jpg",
+    "id": 306,
+    "color": "#efbff3",
+    "addedToCart": false,
+    "addedToFavorites": false
+  },
+  {
+    "name": "SteelSeries Rival 310 PUBG Edition",
+    "price": 1999,
+    "imgUrl":"../images/mouse_id_307.jpg",
+    "id": 307,
+    "color": "#efbff3",
+    "addedToCart": false,
+    "addedToFavorites": false
+  },
+  {
+    "name": "Razer Mamba Wireless Black",
+    "price": 2069,
+    "imgUrl":"../images/mouse_id_308.jpg",
+    "id": 308,
+    "color": "#efbff3",
+    "addedToCart": false,
+    "addedToFavorites": false
+  },
+  {
+    "name": "Cougar 700M EVO USB Black",
+    "price": 2499,
+    "imgUrl":"../images/mouse_id_309.jpg",
+    "id": 309,
+    "color": "#efbff3",
+    "addedToCart": false,
+    "addedToFavorites": false
+  },
+  {
+    "name": "Cougar 700M Superior",
+    "price": 2324,
+    "imgUrl":"../images/mouse_id_310.jpg",
+    "id": 310,
+    "color": "#efbff3",
+    "addedToCart": false,
+    "addedToFavorites": false
+  },
+  {
+    "name": "Asus ROG Pugio Black",
+    "price": 2299,
+    "imgUrl":"../images/mouse_id_311.jpg",
+    "id": 311,
+    "color": "#efbff3",
+    "addedToCart": false,
+    "addedToFavorites": false
+  },
+  {
+    "name": "Logitech Performance Mouse MX",
+    "price": 2300,
+    "imgUrl":"../images/mouse_id_312.jpg",
+    "id": 312,
+    "color": "#efbff3",
+    "addedToCart": false,
+    "addedToFavorites": false
+  }
+]
+
+

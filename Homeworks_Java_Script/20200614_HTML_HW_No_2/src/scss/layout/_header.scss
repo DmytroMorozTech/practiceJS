@@ -1,0 +1,172 @@
+.header {
+  min-height: 210px;
+  max-width: 100%;
+
+  &__image img {
+    min-width: 100%;
+    max-width: 100%;
+    margin-top: 60px;
+  }
+
+  &__nav {
+    position: fixed;
+    top:25px;
+    right:25px;
+    width: 100%;
+  }
+
+  &__links {
+    @include flex-column;
+    max-width: 100%;
+    position: absolute;
+    top: 37px;
+    right: 0;
+    background-color: $color-white;
+    width: 49vw;
+    align-items: center;
+    transition: all 1500ms ease-out;
+    pointer-events: none;
+    z-index: 2;
+    opacity:0;
+
+    &.open {
+      pointer-events: all;
+      opacity: 1;
+    }
+
+    /* Initially opacity of main drop-down menu is set to 0, i.e. invisible*/
+    /* When user clicks on "hamburger" button - the menu appears with smooth animation*/
+    & li {
+      opacity: 0;
+      width: 100%;
+      border-bottom: 2px solid $color-drop-down-bg;
+
+      &:hover {
+        background-color:#F5F5F5;
+        transition: all 0.01s linear;
+      }
+
+      &:nth-child(1) {
+        transition: opacity 0.5s ease 0.2s;
+      }
+
+      &:nth-child(2) {
+        transition: opacity 0.5s ease 0.3s;
+      }
+
+      &:nth-child(3) {
+        transition: opacity 0.5s ease 0.4s;
+      }
+
+      &:nth-child(4) {
+        transition: opacity 0.5s ease 0.5s;
+      }
+
+      &:nth-child(5) {
+        transition: opacity 0.5s ease 0.5s;
+      }
+
+      &:nth-child(6) {
+        transition: opacity 0.5s ease 0.6s;
+      }
+
+      &:nth-child(7) {
+        transition: opacity 0.5s ease 0.7s;
+      }
+
+      &.fade-in {
+        opacity: 1;
+      }
+
+      & a {
+        display: block;
+        height: 100%;
+        transition: transform 150ms linear;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .header {
+    width: 100%;
+
+    &__nav {
+      position: relative;
+      top:0;
+      right:0;
+      width: 100%;
+    }
+
+    &__image img {
+      margin-top: 44px;
+    }
+
+    &__links {
+      min-height: 2.2rem;
+      flex-direction: row;
+      position: static;
+      margin: 0 auto;
+      width: 80%;
+      align-items: center;
+      transition: all 1500ms ease-out;
+      pointer-events: all;
+      opacity: 1;
+      justify-content: space-between;
+
+      & li {
+        opacity: 1;
+        line-height: 2.2rem;
+        width: auto;
+        padding-left: 0;
+        border-bottom: none;
+
+
+        &:hover {
+          background-color: transparent;
+          transition: all 0.01s linear;
+        }
+
+        &:nth-child(1) {
+          transition: opacity 0.5s ease 0.2s;
+        }
+
+        &:nth-child(2) {
+          transition: opacity 0.5s ease 0.3s;
+        }
+
+        &:nth-child(3) {
+          transition: opacity 0.5s ease 0.4s;
+        }
+
+        &:nth-child(4) {
+          transition: opacity 0.5s ease 0.5s;
+        }
+
+        &:nth-child(5) {
+          transition: opacity 0.5s ease 0.5s;
+        }
+
+        &:nth-child(6) {
+          transition: opacity 0.5s ease 0.6s;
+        }
+
+        &:nth-child(7) {
+          transition: opacity 0.5s ease 0.7s;
+        }
+
+        &.fade-in {
+          opacity: 1;
+        }
+
+        & a:link, & a:visited {
+          color: $color-primary;
+        }
+
+        &:first-child a {
+          color: $color-nav-active;
+        }
+      }
+    }
+  }
+}

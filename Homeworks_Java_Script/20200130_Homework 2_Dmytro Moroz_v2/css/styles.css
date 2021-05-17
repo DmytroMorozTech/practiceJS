@@ -1,0 +1,207 @@
+/*
+1. Logo
+2. Header, top-menu
+3. Left-menu
+4. Right-content-block
+5. Footer, bottom-menu
+*/
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    font-family: 'Muli', Helvetica, sans-serif;
+    /*padding: 20px 0 0 0; - лучше не использовать padding внутри тега body*/
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    /*outline: 2px solid gray; Обводил себе <div class="container"> на время создания страницы для наглядности границ.*/
+}
+
+/* 1. Logo */
+.logo {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 4rem;
+    margin: 0 0 46px 0;
+}
+
+h1 {
+    margin-top: 15px;
+}
+
+h1 a:hover  {
+    font-size: 4.2rem;
+}
+
+.highlighted {
+    color:#33ccff;
+}
+
+.logo a:link,
+.logo a:visited {   /*Используем контекстный селектор, или, его еще называют СЕЛЕКТОР ПОТОМКОВ*/
+    text-decoration: none;
+    color:black;
+}
+
+/* 2. Header, Top-menu */
+.top-menu {
+    height: 5rem;
+    width: 100%; /*Задаем элементу header ширину 100% от ширины его родительского элемента*/
+    background-color: #35444f;
+    margin: 0 auto 52px auto;
+    text-align: center;
+}
+
+.top-menu-animation {
+    display: inline-block;
+    font-size: 1.28rem; /*при изучении макета страницы замеряем высоту определенного шрифта в пикселях;
+                чтобы перевести эту высоту из пикселей в единицы измерения rem (1-rem = базовый размер шрифта, установленный в разделе HTML (styles.css)
+                в нашем случае 1 rem=14px),
+                нужно провести следующие вычисления: 18px/14px=1.28.
+                То есть 18px в данном случае приравнивается к 1.28rem)*/
+    color: white;
+    text-decoration: none; /*убираем подчеркивание текста ссылок*/
+    padding: 0 60px;
+    line-height: 5rem; /*Благодаря тому, что выставил высоту строки такую же, как высота <div class="top-menu">, смог добиться
+                вертикального выравнивания текста в блоке header*/
+    transition: all 400ms cubic-bezier(25, 8, 25, 1) 500ms;
+}
+
+.top-menu-animation:hover {
+    background:#222f3a;
+    cursor: pointer; /*При наведении на ячейку с пунктом меню у нас будет появляться вместо стандартного курсора - pointer*/
+    border-left: 1px solid #818181;
+    border-right: 1px solid #818181;
+    /*outline: 1px solid #818181; !*outline - не расширяет при использовании границы элемента, в отличие от border*!*/
+}
+
+.top-menu li a:link,
+.top-menu li a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+/* 3. Left-menu */
+.left-menu {
+    width: 344px; /*24.57rem*/
+    height: 400px; /*28.57rem*/
+    float: left;
+    border: 1px solid #35444f;
+    overflow: hidden;
+}
+
+.left-menu li a:link,
+.left-menu li a:visited {
+    text-decoration: none;
+    color:#336666;
+}
+
+.left-menu-animation {
+    padding: 0 0 0 3.07rem; /* Задаем отступ слева для всех элементов <li> в нашем left-menu*/
+    line-height: 80px;
+    color: #336666;
+    font-size: 1.42rem;
+    transition: background 400ms cubic-bezier(25, 8, 25, 1) 500ms;
+}
+
+.left-menu-animation:hover {
+    padding: 0 0 0 3.57rem; /* Задаем смещение для наших элементов <li> в left-menu при анимации*/
+    background: #dbdbdb;
+    cursor: pointer; /*При наведении на ячейку с пунктом меню у нас будет появляться вместо стандартного курсора - pointer*/
+}
+
+/* 4. Right-content-block */
+.right-content-block {
+    display: inline-block;
+    width: 884px; /*63.14rem*/
+    margin: 0 0 0 52px; /*От общей ширины блока в 1280px я отминусовал ширину left-menu (344px) и ширину блока main-conent (884px).
+    Получилось 52px - это ширина отступа от картинки до левого меню. */
+}
+
+.image-block {
+    width: 884px;
+    height: 529px;
+    display: flex; /*Эта строка и две следующие отвечают за центрирование изображения, обернутого в div, по горизонтали и вертикали*/
+    align-items: center;/*Центрирование по вертикали*/
+    justify-content: center; /*Центрирование по горизонтали*/
+    margin: 0 0 50px 0;
+    border: 1px solid #35444f;
+    cursor:pointer;
+}
+
+.image  {
+    height: initial;
+    width: initial;
+    transition-duration: 2s;
+}
+
+.image-block:hover .image {
+    transform: scale(1.15); /*При наведении на image-block изображение, которое в нем находится, будет увеличиваться на 15% */
+    transition: scale 3s cubic-bezier(25, 8, 25, 1);
+}
+
+p {
+    padding: 0 30px 30px 30px;
+    font-size: 1rem;
+    line-height: 1.3rem;
+}
+
+/* 5. Footer, bottom-menu */
+.bottom-menu {
+    display: inline-block;
+    width: 100%; /*Задаем элементу div, который содержит нижнее меню, ширину 100% от ширины его родительского элемента*/
+    background-color: #b4b7ba;
+    height: 5rem;
+    text-align: left;
+}
+
+.bottom-menu-animation {
+    display: inline-block;
+    font-size: 1.42rem;
+    color: black;
+    text-decoration: none;
+    padding: 0 28px;
+    line-height: 5rem; /*Благодаря тому, что выставил высоту строки такую же, как высота родительского блока,
+                                 смог добиться вертикального выравнивания текста в данном блоке*/
+    transition: all 400ms cubic-bezier(25, 8, 25, 1) 500ms;
+}
+
+.bottom-menu li a:link,
+.bottom-menu li a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+.bottom-menu li:hover {
+    cursor: pointer; /*При наведении на ячейку с пунктом меню у нас будет появляться вместо стандартного курсора - pointer*/
+}
+
+.bottom-menu li:hover a {
+    color: #339999;
+    text-decoration: underline;
+}
+
+.copyright {
+    display: inline-block;
+    margin-left: 190px;
+    font-size: 1.42rem;
+    color: black;
+    text-decoration: none;
+    padding: 0 28px;
+    line-height: 5rem;
+}
+
+
+
+
+
+
+

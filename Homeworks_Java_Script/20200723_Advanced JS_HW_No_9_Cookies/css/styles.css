@@ -1,0 +1,264 @@
+/*
+1. Fonts linking.
+2. Table header.
+3. Table body & table footer.
+4. Icons in left column.
+5. Buttons in table footer.
+6. Box-shadow.
+*/
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px; /* 1rem */
+}
+
+/* 1. Fonts linking*/
+@font-face {
+    font-family: 'Arimo';
+    src: url('../fonts/Arimo-Regular.eot');
+    src: url('../fonts/Arimo-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Arimo-Regular.woff2') format('woff2'),
+    url('../fonts/Arimo-Regular.woff') format('woff'),
+    url('../fonts/Arimo-Regular.ttf')  format('truetype'),
+    url('../fonts/Arimo-Regular.svg#Arimo') format('svg');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Arimo';
+    src: url('../fonts/Arimo-Bold.eot');
+    src: url('../fonts/Arimo-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Arimo-Bold.woff2') format('woff2'),
+    url('../fonts/Arimo-Bold.woff') format('woff'),
+    url('../fonts/Arimo-Bold.ttf')  format('truetype'),
+    url('../fonts/Arimo-Bold.svg#Arimo') format('svg');
+    font-weight: 700;
+}
+
+body {
+    font-family: Arimo, Helvetica, serif;
+}
+
+/*2. Table header */
+.background {
+    width: 1192px;
+    height: 736px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #3a4965;
+    z-index: -1;
+}
+
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.table {
+    display: table;
+    box-sizing: content-box;
+    table-layout: fixed;
+    background: #f2f2f2;
+    height: 680px;
+    width: 1140px;
+    vertical-align: middle;
+    color: #484848;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.table th, td {
+    vertical-align: middle;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.table th{
+  font-weight: bold;
+}
+
+.col1 {
+    width: 310px;
+}
+
+.coln {
+    width: 277px;
+}
+
+.header-left {
+    font-size: 18px;
+    line-height: 28px;
+    color: #484848;
+    text-transform: uppercase;
+}
+
+.header-left-bottom {
+    font-size: 30px;
+}
+
+.table .header-left {
+    height: 156px;
+}
+
+.subscription-type {
+    height: 70px;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.subscription-standard {
+    background-color: #89c331;
+}
+
+.subscription-ultimate {
+    font-size: 30px;
+    background-color: #f04a56;
+}
+
+.subscription-premium {
+    background-color: #20807c;
+}
+
+/*3. Table body & table footer*/
+.tbody tr{
+    height: 69px;
+    line-height: 28px;
+}
+
+.tfoot tr{
+    height: 110px;
+}
+
+.tbody tr:nth-child(even) {
+    background-color: #e3e3e3;
+}
+
+.price-per-month {
+    float: left;
+    display: inline-block;
+    max-width: 240px;
+    max-height: 60px;
+    margin-left: 15px;
+    overflow: hidden;
+}
+
+.price {
+    float:left;
+    display: inline-block;
+    font-size: 60px;
+    margin-left: 12px;
+}
+
+.price-block {
+    float:left;
+    max-width: 120px;
+    max-height: 60px;
+}
+
+.price-cents {
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+    font-size: 24px;
+    margin-top: 5px;
+}
+
+.per-month {
+    display: inline-block;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-top: 8px;
+}
+
+/* 4. Icons in left column. */
+.fas {
+    color: #848484;
+}
+
+.fas.fa-archive {
+    font-size: 23px;
+    margin-right: 12px;
+}
+
+.fa-cloud-upload-alt {
+    font-size: 21px;
+    margin-right: 14px;
+}
+
+.fa-envelope {
+    font-size: 24px;
+    margin-right: 12px;
+}
+
+.fa-life-ring {
+    font-size: 24px;
+    margin-right: 13px;
+}
+
+.fa-cube {
+    font-size: 23px;
+    margin-right: 8px;
+}
+
+.fa-users {
+    font-size: 25px;
+    margin-right: 8px;
+}
+
+/* 5. Buttons in table footer.*/
+.btn {
+    display: inline-flex;
+    width: 192px;
+    height: 49px;
+    color: white;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    background-color: #89c331;
+    box-shadow: inset 0px -7px 0px 0px rgba(0,0,0,0.15);
+    text-decoration: none;
+    transition: all .8s;
+}
+
+.btn:hover {
+    cursor: pointer;
+    transform:scale(1.2);
+}
+
+.contact-us {
+    background-color:#484848;
+}
+
+.buy-green {
+    background-color:#89c331;
+}
+
+.buy-red {
+    background-color:#f04a56;
+}
+
+.buy-dark-green {
+    background-color:#20807c;
+}
+
+/* 6. Box-shadow.*/
+.table td {
+    box-shadow: -2px 0px 2px 0px rgba(0,0,0,0.5);
+}
+
+.table th {
+    box-shadow: -2px 0px 2px 0px rgba(0,0,0,0.5);
+}

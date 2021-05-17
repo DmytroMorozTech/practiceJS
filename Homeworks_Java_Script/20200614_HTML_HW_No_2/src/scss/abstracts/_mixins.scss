@@ -1,0 +1,15 @@
+@mixin position-to-center {
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin btn-burger {
+  width: 17px;
+  height: 2px;
+  background-color: $color-white;
+}
+
+@mixin flex-column{
+  display: flex;
+  flex-direction: column;
+}

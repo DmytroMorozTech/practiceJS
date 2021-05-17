@@ -1,0 +1,288 @@
+/*
+1. Header
+2. Parallax-1
+3. Content block-1, block-2, block-3
+4. Parallax-2
+5. Content block-2
+6. Parallax-3
+7. Content block-3
+*/
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px; /* 1rem */
+}
+
+body {
+    font-family: 'Roboto', 'Open Sans', sans-serif;
+    perspective: 1px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* 1. Header */
+.header {
+    position: absolute;
+    top: 32px;
+    display: flex;
+    width: 100%;
+    min-height: 110px;
+    background: white;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 3;
+}
+
+.company {
+    font-family: "Roboto Light", sans-serif;
+    font-weight: 300;
+    color: #424f57;
+    font-size: 36px;
+    line-height: 36px;
+}
+
+.name {
+    font-weight: 700;
+    color: #14afca;
+    text-transform: uppercase;
+}
+
+.nav-bar {
+    display: flex;
+    width: 40vw;
+    text-transform: uppercase;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    color: #3e4c4e;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    z-index: 3;
+}
+
+.nav-bar a:link,
+.nav-bar a:visited {
+    text-decoration: none;
+    color: #3e4c4e;
+}
+
+.nav-bar a:first-child {
+    color: #14afca;
+}
+
+/* 2. Parallax-1*/
+.parallax-1 {
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    max-width: 100vw;
+    height: 596px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.parallax-1::before {
+    content: "";
+    width: 100vw;
+    height: 596px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(../img/Rectangle_2.png), url(../img/bg1.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    /*z-index: -1;*/
+    clip-path: polygon(100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);
+}
+
+.heading {
+    color: #ffffff;
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 75px;
+    text-transform: uppercase;
+    text-align: center;
+    transform: translateY(65px);
+}
+
+/* 3. Content block-1, block-2, block-3 */
+.content {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+}
+
+.block-1 {
+    height: 413px;
+}
+
+.block-2 {
+    height: 680px;
+}
+
+.block-3 {
+    height: 580px;
+}
+
+.h2 {
+    color: #14afca;
+    font-family: 'Roboto', sans-serif;
+    font-size: 60px;
+    font-weight: 700;
+    padding-bottom: 25px;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.paragraph {
+    opacity: 0.89;
+    color: #424f57;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 40px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.paragraph-regular {
+    width: 60vw;
+    color: #424f57;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 30px;
+    padding-top: 42px;
+    text-align: center;
+}
+
+/* 4. Parallax-2 */
+.parallax-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 715px;
+    background-image: url(../img/Rectangle_2.png), url(../img/bg2.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    clip-path: polygon(50% 10%, 100% 0, 100% 90%, 50% 100%, 0 90%, 0 0);
+}
+
+.logos-block {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 96px);
+    place-items: center;
+    grid-column-gap: 4vw;
+    grid-row-gap: 90px;
+    padding-top: 45px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.white {
+    color: white;
+}
+
+/* 5. Content block-2 */
+.people {
+    display: grid;
+    /*width: 100%;*/
+    grid-template-columns: repeat(3, 280px);
+    grid-template-rows: 206px 100px;
+    grid-auto-flow: column;
+    place-items: center;
+    grid-column-gap: 3vw; /*85px*/
+    grid-row-gap: 25px;
+    padding-top: 45px;
+    margin: 0 auto;
+}
+
+.people-description {
+    color: #424f57;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 28px;
+}
+
+/* 6. Parallax-3 */
+.parallax-3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 577px;
+    background-image: url(../img/Rectangle_2.png), url(../img/bg3.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    clip-path: polygon(50% 10%, 100% 0, 100% 90%, 50% 100%, 0 90%, 0 0);
+}
+
+.italicType {
+    width: 48vw;
+    text-align: center;
+    margin-top: 43px;
+    margin-bottom: 25px;
+    color: #d3cccc;
+    font-family: "Open Sans", sans-serif;
+    font-style: italic;
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: 1px;
+}
+
+.signature {
+    width: 48vw;
+    color: #ffffff;
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    font-style: italic;
+    line-height: 24px;
+    letter-spacing: 1px;
+    text-align: right;
+    padding-right: 7vw;
+}
+
+/* 7. Content block-3 */
+.innovation {
+    width: 44vw;
+    color: #424f57;
+    font-family: "Roboto", sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 48px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 1px;
+    margin-top: 45px;
+    margin-bottom: 113px;
+}
+
+.copyright {
+    width: 386px;
+    color: #3d3c3c;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+}
+
+.bold-16px {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}

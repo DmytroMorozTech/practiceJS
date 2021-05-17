@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework No.1_Dmytro Moroz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+<body>
+    <!--    This comment is here to test my git skills -->
+    <div class="container">
+        <header class="header">
+            <a id="logo" href=""><img src="img/logo.svg" alt="Logo"></a>
+            <nav class="header-nav">
+                <div class="menu-btn">
+                    <div class="menu-btn__burger"></div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Business</a></li>
+                    <li><a href="#">Contacts</a></li>
+                    <li><a href="#">Ru</a><span id="separator"> | </span><a href="#">Eng</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="main">
+            <div class="bg-picture">
+                <div id="banners-container">
+                    <div id="energy-gym-banner">Energy Gym</div>
+                    <div id="web-site-banner">Website</div>
+                </div>
+                <picture>
+                    <source srcset="img/gym_main_photo@2x.png" type="image/png" media="(min-width:768px)">
+                    <img src="img/gym_main_photo.png" alt="Gym main photo">
+                </picture>
+            </div>
+            <div class="decoration-block"></div>
+            <div class="description">
+                6 000 sq.m. of comfortable fitness with amazing view of the right bank of Kiev, the Lavra and the Dnieper.
+            </div>
+
+        </main>
+        <div class="about-section">
+            <div class="about-section--item">
+                <img src="img/about/dumbbells.svg" alt="Dumbbells icon">
+                <span>fitness center group training hall</span>
+            </div>
+            <div class="about-section--item">
+                <img src="img/about/treadmill.svg" alt="Treadmill icon">
+                <span>cardio theater</span>
+            </div>
+            <div class="about-section--item">
+                <img src="img/about/swimming-pool%201.svg" alt="Swimming pool icon">
+                <span>professional sports pool 25х15 m with 6 swim lanes & 2 wading pools</span>
+            </div>
+            <div class="about-section--item">
+                <img src="img/about/smiling-baby%201.svg" alt="Smiling baby icon">
+                <span>children’s club EnerKid 500 q.m.</span>
+            </div>
+            <div class="about-section--item">
+                <img src="img/about/juice%201.svg" alt="Fitness bar">
+                <span>fitness bar</span>
+            </div>
+            <div class="about-section--item">
+                <img src="img/about/boxing-gloves%201.svg" alt="Boxing gloves icon">
+                <span>fight Club</span>
+            </div>
+        </div>
+        <div class="map-section">
+            <div id="map">
+                <picture>
+                    <source srcset="img/map/map_big.png" type="image/png" media="(min-width:768px)">
+                    <img src="img/map/map_small.png" alt="Location map">
+                </picture>
+                <img id="location-icon" src="img/map/location_icon_on_map.svg" alt="Location icon on map">
+            </div>
+            <span id="map-description">Pavla Tychyny Ave, Kiev, Ukraine</span>
+        </div>
+        <footer id="footer">
+            <p id="contacts">Contacts</p>
+            <div id="footer-container">
+                <div class="footer-item">
+                    <img src="img/footer/message_icon.svg" alt="Message icon">
+                    <p class="footer-extra-info">email</p>
+                    <a href="mailto:info@unicorn.com" rel="noopener noreferrer">info@unicorn.com</a>
+                </div>
+                <div class="footer-item">
+                    <img src="img/footer/phone_icon.svg" alt="Phone icon">
+                    <div id="phone-numbers">
+                        <p class="footer-extra-info">call</p>
+                        <a href="tel:+380507770000">+38050 777 00 00</a>
+                        <a href="tel:+380507770000">+38050 777 00 00</a>
+                    </div>
+                </div>
+                <div class="footer-item">
+                    <img src="img/footer/location_icon.svg" alt="Location icon">
+                    <div id="address">
+                        <p class="footer-extra-info">location</p>
+                        <p>Kiev, Ukraine</p>
+                        <p>Minsk, Belarus</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,304 @@
+/*
+1. Header
+2. Main content
+3. PIC ANIMATION
+4. Footer
+*/
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 14px; /*Размер шрифта в подписях к картинкам*/
+}
+
+body {
+    font-family: 'Muli', Helvetica, sans-serif;
+    background-image: url("../img/background.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/*1. Header */
+.container {
+    width: 1366px;
+    height: 768px;
+    padding: 49px 144px 20px 153px;
+    margin: 0 auto;
+}
+
+.header {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    transition: all 0ms;
+}
+
+.clearfix {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.logo {
+    float: left;
+    height: 44px;
+    width: 46px;
+    transition: color .8s;
+}
+
+.st0 {
+    fill: white;
+    transition: fill .8s;
+}
+
+.st0:hover {
+    fill: #f26522;
+}
+
+.text-near-logo {
+    float: left;
+    max-width: 107px;
+    max-height: 44px;
+    margin: 0 0 0 15px;
+    color: white;
+    overflow: hidden; /* Обрезает элементы, которые выходят за пределы родителя, то есть div class="text-near-logo" .*/
+    transition: color    .8s;
+}
+
+.text-near-logo a:link,
+.text-near-logo a:visited {
+    text-decoration: none;
+    color:white;
+}
+
+.text-near-logo:hover a {
+    color: #f26522;
+}
+
+.logo-upper-part {
+    display: inline-block;
+    width: 100%; /*Задает элементу <span class="logo-upper-part"> ширину 100% от ширины родительского элемента*/
+    color: white;
+    font-size: 23px;
+    font-weight: 700;
+    letter-spacing: 8px;
+    transition: color .8s;
+}
+
+.logo-bottom-part {
+    display: inline-block;
+    width: 100%;
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 5.5px;
+    padding: 9px 0 0 1px;
+    transition: color .8s;
+}
+
+.text-up-right  {
+    float: right;
+    max-height: 44px;
+    max-width: 250px;
+    margin: 0;
+    text-align: right;
+    overflow: hidden;
+}
+
+.text-up-right a:link,
+.text-up-right a:visited {
+    text-decoration: none;
+    color:white;
+}
+
+.e-mail  {
+    display: inline-block;
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    padding: 12px 0 0 0;
+}
+
+.phone  {
+    display: inline-block;
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    padding: 7px 0 0 0;
+}
+
+/*2. Main content */
+.main-content {
+    margin: 45px 0 0 0;
+}
+
+.img-box {
+    position: relative;
+    float: left;
+    text-align: center;
+    width: 313px;
+    height: 244px;
+}
+
+.left-box {
+    margin: 0 65px 54px 0;
+}
+
+.center-box {
+    margin: 0 65px 54px 0;
+}
+
+.right-box {
+    margin: 0 0 54px 0;
+}
+
+/* Gradient border + h2*/
+
+.gradient {
+    width: 313px;
+    height: 206px;
+    display: flex; /*Эта строка и две следующие отвечают за центрирование изображения, обернутого в div, по горизонтали и вертикали*/
+    align-items: center;/*Центрирование по вертикали*/
+    justify-content: center; /*Центрирование по горизонтали*/
+    background: linear-gradient(to bottom, white, black);
+    cursor:pointer;
+}
+
+.h2  {
+    display: inline-block;
+    padding-top: 22px;
+    font-size: 13px;
+    color: white;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: color;
+}
+
+.h2 a:link,
+.h2 a:visited {
+    text-decoration: none;
+    color:white;
+}
+
+/* 3. PIC ANIMATION */
+
+.pic-animation  {
+    position: absolute;
+    top: 143px;
+    left:0;
+    width: 313px;
+    height: 63px;
+    text-align: right;
+    background-color: #f26522;
+    padding: 15px 18px 15px 21px;
+    z-index: -1; /*Задаем отображение класса до анимации, то есть до transition*/
+    -webkit-transition: all .8s; /*В этой и след. 2х строчках задаем анимацию, которая будет происходить при наведении*/
+    -o-transition: all .8s;
+    transition: all .8s;
+}
+
+.pic.animation:first-child {
+    position: absolute;
+    top:0;
+    left:0;
+    display: block; /*Задаем ссылке, которая покрывает анимационный оранжевый блок, размеры данного блока. Чтобы он был кликабельный по всей своей поверхности*/
+    width: 313px;
+    height: 63px;
+}
+
+.animation-text {
+    float: left;
+    width: 100%;
+    margin: 0;
+    overflow: hidden; /* Обрезает элементы, которые выходят за пределы родителя, то есть div class="text-near-logo" .*/
+    transition: color;
+    text-align: left;
+    line-height: 16px;
+}
+
+.animation-text a:link,
+.animation-text a:visited {
+    text-decoration: none;
+    color:white;
+}
+
+.animation_from {
+
+    display: inline-block;
+    color: white;
+    width: 70%;
+    font-size: 8px;
+    font-weight: 500;
+    transition: color .8s;
+}
+
+.animation_from a:link,
+.animation_from a:visited {
+    text-decoration: none;
+    color:white;
+    font-size: 8px;
+}
+
+.euro50 {
+    display: inline-block;
+    width: 50%;
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    transition: color .8s;
+}
+
+.euro50 a:link,
+.euro50 a:visited {
+    text-decoration: none;
+    color:white;
+    text-align: left;
+    font-size: 15px;
+}
+
+.view-details {
+    float: right;
+    padding: 0 16px 0 0;
+    width: 40%;
+    margin: 0;
+    overflow: hidden;
+    text-align: right;
+    font-size: 10px;
+    white-space: pre-wrap;
+}
+
+.view-details::after {
+    display: inline-block;
+    content:">";
+    color: #f8b18f;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.img-box:hover .pic-animation {
+    z-index:2;
+    top: 142px;
+    cursor:pointer;
+}
+
+.img-box:hover .h2 a{
+    color: #f26522;
+}
+
+/* 4. Footer */
+.copyright  {
+    width: 100%;
+    padding-top: 7px;
+    font-size: 10px;
+    color: white;
+    text-align: center;
+}
+
+

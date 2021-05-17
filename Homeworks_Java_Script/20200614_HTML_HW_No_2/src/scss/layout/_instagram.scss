@@ -1,0 +1,97 @@
+.instagram {
+    padding: 25px 30px 42px 30px;
+    background-color: $color-white;
+    @media (min-width: 768px) {
+      padding: 47px 85px 47px 85px;
+      max-width: 100%;
+      background-color: $color-instagram-bg;
+    }
+
+    @media (min-width: 1200px) {
+      padding: 42px $padding-width-insta 66px $padding-width-insta;
+    }
+
+    &__header{
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 13px;
+      width: 100%;
+      @media (min-width: 768px) {
+        margin-bottom: 3.5rem;
+      }
+      @media (min-width: 1200px) {
+        margin-bottom: 2.4rem;
+        max-width: 1170px;
+      }
+    }
+
+    &__last-shot{
+      @media (min-width: 480px) {
+        display: none;
+      }
+    }
+
+    &__latest-shots{
+      display: none;
+      @media (min-width: 480px) {
+        display: inline-block;
+      }
+      @media (min-width: 768px) {
+        font-size: 1.6rem;
+      }
+    }
+
+    &__go-to-page {
+      display: none;
+      @media (min-width: 768px) {
+        display: inline-block;
+      }
+    }
+
+    &__img-container{
+      display: flex;
+      @media (min-width: 768px) {
+        max-width: 100%;
+        }
+
+      @media (min-width: 1200px) {
+        max-width: 1170px;
+      }
+
+      & a {
+        width: 80vw;
+        &:not(:first-child) {
+          display: none;
+        }
+
+        @media (min-width: 480px) {
+          &:nth-child(1), &:nth-child(2) {
+            display: flex;
+            width: calc((100% - 10px)/2);
+          }
+        }
+
+        @media (min-width: 768px) {
+          &:not(:last-child) {
+            display: flex;
+            width: calc((100% - 20px)/3);
+          }
+        }
+
+        @media (min-width: 1200px) {
+          &:last-child {
+            display: flex;
+          }
+          max-width: calc((100% - 30px)/4);
+        }
+
+        & + a {
+          margin-left: 10px;
+        }
+      }
+    }
+
+    &__image {
+        width: 100%;
+    }
+}
