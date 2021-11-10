@@ -75,7 +75,7 @@ const proto1 = {
 const resolvePath = (object, path) => path.split('.').reduce((o, p) => o[p], object);
 
 function calculateProjectionPaths(proto, src) {
-	if (Object.keys(proto).length === 0 || Object.keys(src).length === 0) return {};
+	if (Object.keys(proto).length === 0 || Object.keys(src).length === 0) return [];
 	const projectionAddresses = [];
 
 	function recurse(proto, src, path) {
