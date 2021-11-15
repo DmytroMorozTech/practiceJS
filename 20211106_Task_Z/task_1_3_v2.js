@@ -13,7 +13,10 @@ const isObject = variable => {
 	return variable !== null && typeof variable === 'object' && !Array.isArray(variable);
 };
 
-const src = {
+// Dataset No. 1 goes below
+// Expected object projection:
+// {"prop11":{"prop22":{"prop31":31,"prop32":32,"prop33":{"name":"Superman","address":{"country":"USA","city":"NY"},"phoneNumber":"5555555"}}}}
+const src1 = {
 	prop11: {
 		prop21: 21,
 		prop22: {
@@ -32,13 +35,16 @@ const src = {
 	prop12: 12,
 };
 
-const proto = {
+const proto1 = {
 	prop11: {
 		prop22: null,
 	},
 };
 
-const src1 = {
+// Dataset No. 2 goes below
+// Expected object projection:
+// {"p1":{"p11":{"p111":"data p1/p11/p111"}},"p2":{"p21":{"p211":"data p2/p21/p211"}}}
+const src2 = {
 	p1: {
 		p11: {
 			p111: 'data p1/p11/p111',
@@ -56,7 +62,7 @@ const src1 = {
 	},
 };
 
-const proto1 = {
+const proto2 = {
 	p1: 'proto data p1',
 	p2: {
 		p21: {
@@ -70,6 +76,33 @@ const proto1 = {
 			},
 		},
 	},
+};
+
+// Dataset No. 3 goes below
+// Expected object projection:
+// {"prop13":{"prop41":41}}
+const src3 = {
+	prop11: {
+		prop21: 21,
+		prop22: {
+			prop31: 31,
+			prop32: 32,
+		},
+	},
+	prop12: 12,
+	prop13: {
+		prop41: 41,
+	},
+};
+
+const proto3 = {
+	prop11: {
+		prop21: {
+			prop211: null,
+		},
+		prop23: null,
+	},
+	prop13: null,
 };
 
 const resolvePath = (object, path) => path.split('.').reduce((o, p) => o[p], object);
@@ -88,8 +121,8 @@ function calculateProjectionPaths(proto, src) {
 			let valueSrc = src[key];
 
 			if (isObject(valueProto) && isObject(valueSrc)) {
-				path = path.length > 0 ? `${path}.${key}` : `${key}`;
-				recurse(valueProto, valueSrc, path);
+				const updatedPath = path.length > 0 ? `${path}.${key}` : `${key}`;
+				recurse(valueProto, valueSrc, updatedPath);
 			}
 
 			if (!isObject(valueProto)) {
@@ -128,15 +161,22 @@ function objectProjection(proto, src) {
 
 console.log('--------------------------------------------------');
 console.log('Projection paths for dataset No.1:');
-console.log(calculateProjectionPaths(proto, src));
+console.log(calculateProjectionPaths(proto1, src1));
 
 console.log('Projected object for dataset No.1:');
-console.log(JSON.stringify(objectProjection(proto, src)));
+console.log(JSON.stringify(objectProjection(proto1, src1)));
 
 console.log('--------------------------------------------------');
 console.log('Projection paths for dataset No.2:');
-console.log(calculateProjectionPaths(proto1, src1));
+console.log(calculateProjectionPaths(proto2, src2));
 
 console.log('Projected object for dataset No.2:');
-console.log(JSON.stringify(objectProjection(proto1, src1)));
+console.log(JSON.stringify(objectProjection(proto2, src2)));
+console.log('--------------------------------------------------');
+
+console.log('Projection paths for dataset No.3:');
+console.log(calculateProjectionPaths(proto3, src3));
+
+console.log('Projected object for dataset No.3:');
+console.log(JSON.stringify(objectProjection(proto3, src3)));
 console.log('--------------------------------------------------');
