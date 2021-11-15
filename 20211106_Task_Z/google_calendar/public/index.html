@@ -26,28 +26,27 @@
 
 	<body>
 		<p class="heading">TASK2_Google Calendar API</p>
-		<div id='task_container'>
-        <table>
-			<tr>
-				<td>Please enter ID of shared Google Calendar:</th>
-				<td><input type="text" name="calendarId" class="input" id="calendar_id" /></th>
-			</tr>
-            <tr>
-                <td>Please select time interval:</td>
-                <td><input type="text" name="datetimes" class="input" id="date_range"/></td>
-            </tr>
-		</table>
+		<div id="task_container">
+			<table>
+				<tr>
+					<td>Please enter ID of shared Google Calendar:</td>
+					<td><input type="text" name="calendarId" class="input" id="calendar_id" /></td>
+				</tr>
+				<tr>
+					<td>Please select time interval:</td>
+					<td><input type="text" name="datetimes" class="input" id="date_range" /></td>
+				</tr>
+			</table>
 
-        <button id="get_data" class="get-data-btn" disabled>GET DATA</button>
-
-        </div>
+			<button id="get_data" class="get-data-btn" disabled>GET DATA</button>
+		</div>
 
 		<!--Add buttons to initiate auth sequence and sign out-->
 		<button id="authorize_button" style="display: none">Authorize</button>
-		
+
 		<div id="content" style="white-space: pre-wrap"></div>
-                
-        <button id="signout_button" style="display: none">Sign Out</button>
+
+		<button id="signout_button" style="display: none">Sign Out</button>
 
 		<script type="text/javascript">
 			// Client ID and API key from the Developer Console
@@ -63,25 +62,24 @@
 
 			const authorizeButton = document.getElementById('authorize_button');
 			const signoutButton = document.getElementById('signout_button');
-            const getDataButton = document.getElementById('get_data');
-            const taskContainer = document.getElementById('task_container');
-            const calendarId = document.getElementById("calendar_id");
+			const getDataButton = document.getElementById('get_data');
+			const taskContainer = document.getElementById('task_container');
+			const calendarId = document.getElementById('calendar_id');
 
-            // this event listener is responsible for disabling the "GET DATA" button, when the input with
-            // Shared Google Calendar ID is empty
-            calendarId.addEventListener("input", function(ev) {
-                if (ev.target.value.trim().length === 0) {
-                    getDataButton.disabled = true;
-                    return;
-                }
-                getDataButton.disabled = false;
-            })
+			// this event listener is responsible for disabling the "GET DATA" button, when the input with
+			// Shared Google Calendar ID is empty
+			calendarId.addEventListener('input', function (ev) {
+				if (ev.target.value.trim().length === 0) {
+					getDataButton.disabled = true;
+					return;
+				}
+				getDataButton.disabled = false;
+			});
 
-            
 			$(function () {
 				$('input[name="datetimes"]').daterangepicker({
 					timePicker: true,
-                    timePicker24Hour: true,
+					timePicker24Hour: true,
 					startDate: moment().startOf('hour'),
 					endDate: moment().startOf('hour').add(32, 'hour'),
 					locale: {
@@ -118,7 +116,7 @@
 							updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
 							authorizeButton.onclick = handleAuthClick;
 							signoutButton.onclick = handleSignoutClick;
-                            getDataButton.onclick = getDataHandler
+							getDataButton.onclick = getDataHandler;
 						},
 						function (error) {
 							appendСontent(JSON.stringify(error, null, 2));
@@ -134,11 +132,11 @@
 				if (isSignedIn) {
 					authorizeButton.style.display = 'none';
 					signoutButton.style.display = 'block';
-                    taskContainer.style.display = 'block';
+					taskContainer.style.display = 'block';
 				} else {
 					authorizeButton.style.display = 'block';
 					signoutButton.style.display = 'none';
-                    taskContainer.style.display = 'none';
+					taskContainer.style.display = 'none';
 					eraseContent();
 				}
 			}
@@ -155,38 +153,35 @@
 			 */
 			function handleSignoutClick(event) {
 				gapi.auth2.getAuthInstance().signOut();
-
 			}
 
-            /**
+			/**
 			 *  Get data about busy time intervals in shared Google Calendar.
 			 */
 			function getDataHandler(event) {
-				const calendarId = document.getElementById("calendar_id");
-                const dateRange = document.getElementById("date_range");
-                
-                const date1Str = dateRange.value.substr(0,16);
-                const date2Str = dateRange.value.substr(19,16);
-                const dateTimeStart = new Date(date1Str);
-                const dateTimeEnd = new Date(date2Str);
+				const calendarId = document.getElementById('calendar_id');
+				const dateRange = document.getElementById('date_range');
 
-                gapi.client.calendar.events
+				const date1Str = dateRange.value.substr(0, 16);
+				const date2Str = dateRange.value.substr(19, 16);
+				const dateTimeStart = new Date(date1Str);
+				const dateTimeEnd = new Date(date2Str);
+
+				gapi.client.calendar.events
 					.list({
 						calendarId: calendarId.value.trim(),
 						timeMin: dateTimeStart.toISOString(),
-                        timeMax: dateTimeEnd.toISOString(),
+						timeMax: dateTimeEnd.toISOString(),
 						showDeleted: false,
 						singleEvents: true,
 						orderBy: 'startTime',
 					})
 					.then(function (response) {
-                       
-
 						let events = response.result.items;
-                        eraseContent();
+						eraseContent();
 						appendСontent('Found events:');
 
-                        const resultingArr = [];
+						const resultingArr = [];
 
 						if (events.length > 0) {
 							for (i = 0; i < events.length; i++) {
@@ -196,11 +191,11 @@
 									when = event.start.date;
 								}
 
-                                resultingArr.push({
+								resultingArr.push({
 									start: when,
 									end: event.end.dateTime || when,
-									type: "busy"
-								})
+									type: 'busy',
+								});
 
 								appendСontent(event.summary + ' (' + when + ')');
 							}
@@ -208,13 +203,16 @@
 							appendСontent('No events found.');
 						}
 
-                        console.log(resultingArr)
-					}).catch(err => {
-                         if (err.result?.error && err.result?.error.code === 404) {
-                            eraseContent();
-                            appendСontent(`No Shared Google Calendar was found with provided ID (${calendarId.value.trim()}). `);
-                        }
-                    });
+						console.log(resultingArr);
+					})
+					.catch(err => {
+						if (err.result?.error && err.result?.error.code === 404) {
+							eraseContent();
+							appendСontent(
+								`No Shared Google Calendar was found with provided ID (${calendarId.value.trim()}). `
+							);
+						}
+					});
 			}
 
 			function appendСontent(message) {
@@ -223,11 +221,10 @@
 				pre.appendChild(textContent);
 			}
 
-            function eraseContent() {
+			function eraseContent() {
 				var contentBlock = document.getElementById('content');
-				contentBlock.innerHTML = ''
+				contentBlock.innerHTML = '';
 			}
-
 		</script>
 
 		<script
