@@ -1,0 +1,61 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 14px;
+}
+
+body {
+	font-family: 'Muli', Helvetica, sans-serif;
+	padding: 30px;
+}
+
+.heading {
+	font-size: 18px;
+	font-weight: bold;
+	color: darkblue;
+}
+
+.input {
+	min-width: 400px;
+	margin: 0 20px;
+}
+
+#task_container {
+	display: none;
+	margin: 30px 0;
+}
+
+#content {
+	color: darkblue;
+	font-size: 18px;
+	margin: 30px 0;
+}
+
+.get-data-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100px;
+	height: 40px;
+	background-color: #3cb878;
+	margin: 25px 0;
+	font-size: 16px;
+	color: white;
+	font-weight: 700;
+	border-radius: 4px;
+	cursor: pointer;
+	text-decoration: none;
+	transition: 0.5s;
+}
+
+.get-data-btn:hover {
+	background-color: #329a65;
+}
+
+.get-data-btn:disabled {
+	background-color: gainsboro;
+}
