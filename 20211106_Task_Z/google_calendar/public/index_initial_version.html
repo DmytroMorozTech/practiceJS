@@ -159,7 +159,7 @@
 			 *  Get data about busy time intervals in shared Google Calendar.
 			 */
 			function getDataHandler(event) {
-				const calendarId = document.getElementById('calendar_id').value.trim();
+				const calendarId = document.getElementById('calendar_id');
 				const dateRange = document.getElementById('date_range');
 
 				const date1Str = dateRange.value.substr(0, 16);
@@ -167,42 +167,51 @@
 				const dateTimeStart = new Date(date1Str);
 				const dateTimeEnd = new Date(date2Str);
 
-				let query = gapi.client.calendar.freebusy.query({
-					timeMin: dateTimeStart.toISOString(),
-					timeMax: dateTimeEnd.toISOString(),
-					timeZone: 'UTC+2',
-					items: [{ id: calendarId }],
-				});
-
-				query
-					.execute(function (res) {
-						if (res.calendars[calendarId].errors) {
-							eraseContent();
-							appendСontent(
-								`No Shared Google Calendar was found with provided ID (${calendarId}). `
-							);
-							return;
-						}
-
-						let busyTimeIntervals = res.calendars[calendarId].busy;
+				gapi.client.calendar.events
+					.list({
+						calendarId: calendarId.value.trim(),
+						timeMin: dateTimeStart.toISOString(),
+						timeMax: dateTimeEnd.toISOString(),
+						showDeleted: false,
+						singleEvents: true,
+						orderBy: 'startTime',
+					})
+					.then(function (response) {
+						let events = response.result.items;
 						eraseContent();
-						appendСontent('Found busy time intervals:\n');
+						appendСontent('Found events:');
 
-						if (busyTimeIntervals.length > 0) {
-							for (i = 0; i < busyTimeIntervals.length; i++) {
-								const busyTimeInterval = busyTimeIntervals[i];
-								appendСontent(JSON.stringify(busyTimeInterval) + '\n');
+						const resultingArr = [];
+
+						if (events.length > 0) {
+							for (i = 0; i < events.length; i++) {
+								var event = events[i];
+								var when = event.start.dateTime;
+								if (!when) {
+									when = event.start.date;
+								}
+
+								resultingArr.push({
+									start: when,
+									end: event.end.dateTime || when,
+									type: 'busy',
+								});
+
+								appendСontent(event.summary + ' (' + when + ')');
 							}
 						} else {
-							appendСontent('No busy time intervals found.');
+							appendСontent('No events found.');
 						}
 
-						console.log('Busy time intervals:');
-						console.log(busyTimeIntervals);
+						console.log(resultingArr);
 					})
 					.catch(err => {
-						eraseContent();
-						appendСontent(`No Shared Google Calendar was found with provided ID (${calendarId}). `);
+						if (err.result?.error && err.result?.error.code === 404) {
+							eraseContent();
+							appendСontent(
+								`No Shared Google Calendar was found with provided ID (${calendarId.value.trim()}). `
+							);
+						}
 					});
 			}
 
